@@ -1,0 +1,159 @@
+@use "./variables.module.scss" as *;
+
+.landing {
+  background: radial-gradient(
+      310% 97% at 50% 0%,
+      rgba(29, 35, 52, 0.47) 0%,
+      rgba(36, 44, 68, 0.209273) 54.9%,
+      #08090a 99.74%
+    ),
+    radial-gradient(
+      310% 93% at 50% 0%,
+      rgba(0, 0, 0, 0.53) 5.96%,
+      rgba(29, 35, 52, 0.47) 89.85%,
+      #08090a 99.66%
+    ),
+    url("/assets/background-first.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: $primary-font;
+  position: relative;
+}
+
+.logo {
+  width: 400px;
+}
+
+.titles {
+  text-align: center;
+  margin-top: 1em;
+  color: $primary-fc;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.subtitle {
+  margin-top: 0.2em;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.explore {
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  font-family: $secondary-font;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: $primary-fc;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+
+    left: 50%;
+    bottom: -25px;
+    animation: elevate 1s ease-in-out infinite;
+  }
+}
+
+.seperator {
+  height: 80px;
+  background: $seperator-bg;
+}
+
+/* CHAMPIONS SECTION */
+
+.championsSection {
+    min-height: 100vh;
+  background: radial-gradient(
+      136% 46% at 50% 48%,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0) 60.63%,
+      #080a0b 99.74%
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/assets/background-second.webp");
+  background-size: cover;
+  background-position: center;
+
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.championsSectionContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.championsSectionText{
+    width: 50%;
+    font-family: $secondary-font;
+
+    h1{
+        font-size: 65px;
+        position: relative;
+
+        &::after{
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: white;
+            left: 0;
+            bottom: -8px;
+        }
+    }
+
+    p{
+        font-size: 18px;
+        margin-top: 2em;
+        max-width: 90%;
+        line-height: 140%;
+    }
+}
+
+.championsSectionButton{
+    background: transparent;
+    border: 1px solid gray;
+    padding: 6px 12px;
+    font-size: 20px;
+    border-radius: 4px;
+    margin-top: 1em;
+    font-family: $secondary-font;
+    cursor: pointer;
+}
+
+.championsSectionCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+
+@keyframes elevate {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

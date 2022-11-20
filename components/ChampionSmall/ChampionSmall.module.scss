@@ -1,0 +1,74 @@
+@use "../../styles/variables.module.scss" as *;
+
+.container {
+  border: 1px solid green;
+  width: 450px;
+  height: 600px;
+  padding: 1em;
+
+  background: rgba(129, 129, 129, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.9px);
+  -webkit-backdrop-filter: blur(4.9px);
+
+  border: 1px solid rgba(220, 228, 107, 0.7);
+  box-shadow: 0 0 5px #e4e4e4;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  margin: auto;
+}
+
+.titles {
+  text-align: center;
+  font-family: $primary-font;
+  h2 {
+    font-size: 45px;
+    @include gold-effect;
+  }
+
+  h3 {
+    font-weight: 500;
+    position: relative;
+    @include gold-effect;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 50%;
+      background: #f6e27a;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -8px;
+    }
+  }
+}
+
+.statsFirst,
+.statsSecond{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 3em;
+}
+
+.stat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    span{
+        font-size: 30px;
+        font-weight: 700;
+        color: #f6e27a;
+    }
+    img{
+        width: 40px;
+    }
+}

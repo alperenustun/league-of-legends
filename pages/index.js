@@ -1,8 +1,9 @@
+import Link from "next/link";
 import ChampionCard from "../components/ChampionCard/ChampionCard";
 import styles from "../styles/home.module.scss";
 import { getOneChampion } from "../utils/api/champion";
 
-export default function Home({champion}) {
+export default function Home({ champion }) {
   return (
     <div>
       <div className={styles.landing}>
@@ -37,7 +38,11 @@ export default function Home({champion}) {
               arttı. Rün Savaşları olarak bilinen bu büyülü eserlerle ilgili
               çatışmalar çıkmaya başladı.
             </p>
-            <button className={styles.championsSectionButton}>Şampiyonlar</button>
+            <Link href={'/champions'}>
+            <button className={styles.championsSectionButton}>
+              Şampiyonlar
+            </button>
+            </Link>
           </div>
           <div className={styles.championsSectionCard}>
             <ChampionCard champion={champion} />
@@ -48,11 +53,11 @@ export default function Home({champion}) {
   );
 }
 
-export async function getStaticProps(){
-  const {data} = await getOneChampion('Zed');
+export async function getStaticProps() {
+  const { data } = await getOneChampion("Zed");
   return {
     props: {
-      champion: Object.values(data.data)[0]
+      champion: Object.values(data.data)[0],
     },
   };
 }

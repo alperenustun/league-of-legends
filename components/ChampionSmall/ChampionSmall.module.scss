@@ -1,7 +1,7 @@
 @use "../../styles/variables.module.scss" as *;
 
 .container {
-  border: 1px solid green;
+  cursor: pointer;
   width: 450px;
   height: 600px;
   padding: 1em;
@@ -50,25 +50,72 @@
 }
 
 .statsFirst,
-.statsSecond{
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 3em;
+.statsSecond {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 3em;
 }
 
-.stat{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.stat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  span {
+    font-size: 30px;
+    font-weight: 700;
+    color: #f6e27a;
+  }
+  img {
+    width: 40px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .container {
+    width: 250px;
+    height: auto;
+    padding: 1em 1em 2.5em 1em;
+  }
+
+  .titles {
+    h2 {
+      font-size: 35px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  .stat {
     gap: 10px;
 
-    span{
-        font-size: 30px;
-        font-weight: 700;
-        color: #f6e27a;
+    span {
+      font-size: 25px;
     }
-    img{
-        width: 40px;
+    img {
+      width: 30px;
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 1em 1em 2.5em 1em;
+  }
+
+  .stat {
+    gap: 10px;
+
+    span {
+      font-size: 35px;
+    }
+    img {
+      width: 40px;
+    }
+  }
 }

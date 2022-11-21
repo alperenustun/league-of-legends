@@ -1,7 +1,6 @@
 @use "../../styles/variables.module.scss" as *;
 
 .container {
-  border: 1px solid green;
   width: 450px;
   height: 600px;
   padding: 1em;
@@ -14,6 +13,11 @@
 
   border: 1px solid rgba(220, 228, 107, 0.7);
   box-shadow: 0 0 5px #e4e4e4;
+  transition: all 400ms ease-in-out;
+
+  &:hover{
+    box-shadow: 0 0 10px #efff5b;
+  }
 }
 
 .image {
@@ -49,44 +53,113 @@
   }
 }
 
-.abilities{
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 700;
-    
-    span{
-        @include gold-effect;
-    }
+.abilities {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+
+  span {
+    @include gold-effect;
+  }
 }
 
-.spellImage{
-    display: block;
-    width: 50px;
+.spellImage {
+  display: block;
+  width: 50px;
 }
 
 .statsFirst,
-.statsSecond{
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 1em;
+.statsSecond {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 1em;
 }
 
-.stat{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.stat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 
-    span{
-        font-size: 30px;
-        font-weight: 700;
-        color: #f6e27a;
+  span {
+    font-size: 30px;
+    font-weight: 700;
+    color: #f6e27a;
+  }
+  img {
+    width: 40px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1366px) {
+  .container {
+    width: 350px;
+    height: auto;
+  }
+
+  .titles {
+    h2 {
+      font-size: 35px;
     }
-    img{
-        width: 40px;
+
+    h3 {
+      font-size: 16px;
     }
+  }
+
+  .abilities {
+    font-size: 18px;
+  }
+
+  .spellImage {
+    width: 40px;
+  }
+
+  .stat {
+    span {
+      font-size: 25px;
+    }
+    img {
+      width: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    height: auto;
+    padding: 1em 1em 2em 1em;
+  }
+
+  .titles {
+    h2 {
+      font-size: 35px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  .abilities {
+    font-size: 18px;
+  }
+
+  .spellImage {
+    width: 40px;
+  }
+
+  .stat {
+    span {
+      font-size: 25px;
+    }
+    img {
+      width: 30px;
+    }
+  }
 }

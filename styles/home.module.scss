@@ -75,7 +75,7 @@
 /* CHAMPIONS SECTION */
 
 .championsSection {
-    min-height: 100vh;
+  min-height: 100vh;
   background: radial-gradient(
       136% 46% at 50% 48%,
       rgba(255, 255, 255, 0) 0%,
@@ -93,67 +93,170 @@
   align-items: center;
 }
 
-.championsSectionContainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    
+.championsSectionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.championsSectionText{
-    width: 50%;
-    font-family: $secondary-font;
+.championsSectionText {
+  width: 50%;
+  font-family: $secondary-font;
 
-    h1{
-        font-size: 65px;
-        position: relative;
+  h1 {
+    font-size: 65px;
+    position: relative;
 
-        &::after{
-            content: '';
-            position: absolute;
-            height: 3px;
-            width: 100%;
-            background: white;
-            left: 0;
-            bottom: -8px;
-        }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: white;
+      left: 0;
+      bottom: -8px;
     }
+  }
 
-    p{
-        font-size: 18px;
-        margin-top: 2em;
-        max-width: 90%;
-        line-height: 140%;
-    }
+  p {
+    font-size: 18px;
+    margin-top: 2em;
+    max-width: 90%;
+    line-height: 140%;
+  }
 }
 
-.championsSectionButton{
-    background: transparent;
-    border: 1px solid gray;
-    padding: 6px 12px;
-    font-size: 20px;
-    border-radius: 4px;
-    margin-top: 1em;
-    font-family: $secondary-font;
-    cursor: pointer;
+.championsSectionButton {
+  background: transparent;
+  border: 1px solid gray;
+  padding: 8px 14px;
+  font-size: 18px;
+  border-radius: 4px;
+  margin-top: 1em;
+  font-family: $secondary-font;
+  cursor: pointer;
 }
 
-.championsSectionCard{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
+.championsSectionCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
 }
-
 
 @keyframes elevate {
-    0%{
-        transform: translateY(0);
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .logo {
+    width: 300px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+  }
+
+  .championsSectionText {
+    width: 50%;
+
+    h1 {
+      font-size: 45px;
+
+      &::after {
+        height: 2px;
+      }
     }
-    50%{
-        transform: translateY(5px);
+
+    p {
+      font-size: 15px;
     }
-    100%{
-        transform: translateY(0);
+  }
+
+  .championsSectionButton{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .logo {
+    width: 250px;
+  }
+
+  .title {
+    font-size: 35px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .championsSectionText {
+    width: 50%;
+
+    h1 {
+      font-size: 35px;
     }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .championsSectionButton{
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .championsSectionContainer {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+
+  .championsSection{
+    height: auto;
+    padding: 1em 2em;
+  }
+
+  .championsSectionText {
+    width: 100%;
+
+    h1 {
+      font-size: 35px;
+      text-align: center;
+    }
+  
+    p {
+      font-size: 18px;
+      margin-top: 1.5em;
+      max-width: 100%;
+    }
+  }
+
+  .championsSectionCard {
+    width: 100%;
+  }
+
+  .championsSectionButton {
+    display: block;
+    width: 60%;
+    margin: 1em auto auto;
+    padding: .8em 0;
+    font-size: 18px;
+  }
 }

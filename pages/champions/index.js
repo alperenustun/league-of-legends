@@ -20,7 +20,7 @@ export default function Home({ champions }) {
   const [champData, setChampData] = useState(content.slice(0,loadedChamp));
   return (
     <div className={styles.container}>
-      {/* {champData}
+      {/* {champData a}
       <button onClick={loadMoreContent}>More</button> */}
       {content}
     </div>

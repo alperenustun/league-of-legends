@@ -7,6 +7,8 @@ $secondary-font: "Inter", sans-serif;
 $seperator-bg: #080a0b;
 $primary-fc: #fff3e0;
 
+$gold-color: #f6e27a;
+
 @mixin gold-effect {
     background-image: linear-gradient(
       to right,

@@ -1,24 +1,22 @@
 import { getChampions, getOneChampion } from "../../../utils/api/champion";
+import styles from "./singleChampion.module.scss";
 
-// export async function getStaticPaths() {
-//   const { data } = await getChampions();
+export async function getStaticPaths(){
+  let content = [];
 
-//   let content = [];
-//   for (const [key, value] of Object.entries(data.data)) {
-//     content.push(value);
-//   }
+  const { data } = await getChampions();
 
-//     const paths = content.data.map((_tutor) => ({
-//       params: { id: _tutor.id.toString() },
-//     }));
-//   return { paths, fallback: "blocking" };
-// }
+  for (const [key, value] of Object.entries(data.data)) {
+    content.push(value);
+  }
 
-export async function getStaticPaths() {
-    return {
-        paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
-        fallback: false, // can also be true or 'blocking'
-      }
+  return{
+    paths:
+      content.map(item => {
+        return {params: {id: item.id}}
+      }),
+    fallback: false,
+  }
 }
 
 export async function getStaticProps(context) {
@@ -31,9 +29,22 @@ export async function getStaticProps(context) {
   };
 }
 
+
 const Champion = ({ champion }) => {
   console.log(champion);
-  return <h1>Deneme</h1>;
+  const championBackgroundStyle = {
+    background: `linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg) no-repeat center center / cover`
+  }
+
+  return (
+    <div>
+      <header className={styles.header} style={championBackgroundStyle}>
+        <img className={styles.mainImage} src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`} />
+        <h2 className={styles.subtitle}>{champion.title}</h2>
+        <h1 className={styles.title}>{champion.name}</h1>
+      </header>
+    </div>
+  )
 };
 
 export default Champion;

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import ChampionSmall from "../../components/ChampionSmall/ChampionSmall";
+import Navbar from "../../components/Navbar/Navbar";
 import { getChampions } from "../../utils/api/champion";
 import styles from "./champions.module.scss";
 
@@ -10,7 +11,7 @@ export default function Home({ champions }) {
     content.push(<Link href={`/champions/${value.id}`} key={value.id}><ChampionSmall champion={value} /></Link>);
   }
 
-  const [loadedChamp, setloadedChamp] = useState(20);
+  const [loadedChamp, setloadedChamp] = useState(30);
   const [champData, setChampData] = useState(content.slice(0, loadedChamp));
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function Home({ champions }) {
   }, [loadedChamp]);
 
   function loadMoreContent() {
-    setloadedChamp((prevValue) => prevValue + 20);
+    setloadedChamp((prevValue) => prevValue + 30);
   }
 
   function onSearchEvent(event) {
@@ -32,10 +33,13 @@ export default function Home({ champions }) {
   }
 
   return (
-    <div className={styles.container}>
-      <input onChange={onSearchEvent} type="text" id="search" />
-      {champData}
-      <button onClick={loadMoreContent}>More</button>
+    <div style={{position: "relative"}} className={styles.container}>
+      <Navbar />
+      <input className={styles.searchBar} onChange={onSearchEvent} type="text" id="search" placeholder="search champion..." />
+      <div className={styles.championsContainer}>
+        {champData}
+      </div>
+      <button className={styles.moreButton} onClick={loadMoreContent}>More</button>
     </div>
   );
 }

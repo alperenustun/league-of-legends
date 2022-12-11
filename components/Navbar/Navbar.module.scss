@@ -1,0 +1,45 @@
+@use "../../styles/variables.module.scss" as *;
+
+.navMain{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    *{
+        font-family: $primary-font;
+        list-style-type: none;
+    }
+}
+
+.linkList{
+    background: rgba(45, 45, 45, 1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    border-radius: 10px;
+
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: -90px;
+    transition: all 500ms ease;
+
+    gap: 20px;
+    padding: 1em 2em;
+
+    &:hover{
+        background: rgba(45, 45, 45, 0.2);
+        right: 0;
+    }
+}
+
+.image{
+    width: 50px;
+}

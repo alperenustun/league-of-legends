@@ -1,20 +1,22 @@
 import Link from "next/link";
 import ChampionCard from "../components/ChampionCard/ChampionCard";
+import Navbar from "../components/Navbar/Navbar";
 import styles from "../styles/home.module.scss";
 import { getOneChampion } from "../utils/api/champion";
 
 export default function Home({ champion }) {
   return (
-    <div>
+    <div style={{position: "relative"}}>
+      <Navbar />
       <div className={styles.landing}>
         <img className={styles.logo} src="/assets/logo.png" />
         <div className={styles.titles}>
           <h1 className={styles.title}>
-            Hiçbir şafak, karanlık olmadan sökmez.
+          "No dawn comes without darkness."
           </h1>
           <h2 className={styles.subtitle}>-Nasus</h2>
         </div>
-        <span className={styles.explore}>Şampiyonları Keşfet</span>
+        <span className={styles.explore}>Explore Champions</span>
       </div>
 
       <div className={styles.seperator}></div>
@@ -22,30 +24,17 @@ export default function Home({ champion }) {
       <section className={styles.championsSection}>
         <div className={styles.championsSectionContainer}>
           <div className={styles.championsSectionText}>
-            <h1>League of Legends Evrenini Keşfedin</h1>
-            <p>
-              Yüzyıllar önce, &apos;Dünya Rünleri&apos; adı verilen büyülü eserler yeniden
-              keşfedildi. Sonraki on yıllar boyunca, Rünler hakkındaki bilgi,
-              daha fazla şey ortaya çıktıkça yayılmaya başladı. Dünyanın en
-              parlak beyinleri, sahip oldukları güçleri belirlemeye çalışarak
-              eski glifleri inceledi. Hatta çok azı kökenlerinin önemini veya
-              içlerinde barındırdıkları katıksız gücü anlamaya başlayabilirdi.
-              Bazıları Rünlerin Runeterra&apos;nın yaratılmasının ayrılmaz bir
-              parçası olduğunu düşündü. Bu gizemli eserlerin ilk kullanımı, tüm
-              ulusların manzarasını yeniden şekillendirdikleri için felaketle
-              sonuçlandı. Rünleri bilenler bu tür &quot;Yapıcıların Kudreti&quot;nin bir
-              silah olarak kullanıldığını hayal ettikçe, güvensizlik hızla
-              arttı. Rün Savaşları olarak bilinen bu büyülü eserlerle ilgili
-              çatışmalar çıkmaya başladı.
-            </p>
+            <h1>Explore the League of Legends Universe</h1>
             <Link href={'/champions'}>
             <button className={styles.championsSectionButton}>
-              Şampiyonlar
+              Champions
             </button>
             </Link>
           </div>
           <div className={styles.championsSectionCard}>
-            <ChampionCard champion={champion} />
+            <Link href={'/champions/Zed'}>
+              <ChampionCard champion={champion} />
+            </Link>  
           </div>
         </div>
       </section>

@@ -1,5 +1,10 @@
 @use "../../../styles/variables.module.scss" as *;
 
+.main{
+    background: #000913;
+    min-height: 100vh;
+}
+
 .header{
     min-height: 80vh;
     background-size: cover;
@@ -50,4 +55,305 @@
     z-index: 2;
     border-radius: 16px;
     border: 2px solid $gold-color;
+}
+
+.championLoreContainer{
+    max-width: 1000px;
+    font-size: 20px;
+    margin: auto;
+    line-height: 150%;
+}
+
+.rolesContainer{
+    border: 1px solid $gold-color;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    padding: 2em 0;
+    margin: 50px auto auto auto;
+    color: $gold-color;
+}
+
+.roles{
+    width: 50%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.infoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 50%;
+
+    span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        font-weight: bold;
+    }
+}
+
+.infoImg{
+    width: 40px;
+    margin-left: 10px;
+}
+
+.spellsContainer{
+    // border: 1px solid $gold-color;
+    max-width: 1000px;
+    margin: 20px auto auto auto;
+    padding: 1em 2em;
+}
+
+.spellImagesAll{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.spellImage{
+    display: block;
+    margin-top: 1em;
+    border: 1px solid $gold-color-faded;
+    cursor: pointer;
+}
+
+.spellDescriptionContainer{
+    text-align: center;
+    margin-top: 30px;
+    min-height: 120px;
+}
+
+.spellDescriptionTitle{
+    font-size: 26px;
+}
+
+.skinsContainer{
+    padding-bottom: 50px;
+}
+
+.skinCard{
+    position: relative;
+    width: 1000px;
+    margin: 30px auto auto auto;
+}
+
+.skinCard:hover{
+    .skinCardTitle{
+        display: none;
+    }
+}
+
+.skinCardImage{
+    display: block;
+    width: 1000px;
+}
+
+.skinCardTitle{
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translateX(-50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 19, 19, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    text-transform: uppercase;
+    font-size: 50px;
+    animation: opacityIn 500ms ease-in-out;
+}
+
+@keyframes opacityIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@media screen and (max-width: 1366px) {
+    .title{
+        font-size: 50px;
+    }
+    
+    .subtitle{
+        font-size: 20px;
+    }
+    
+    .mainImage{
+        width: 600px;
+    }
+
+    .championLoreContainer{
+        max-width: 800px;
+        font-size: 16px;
+    }
+
+    .rolesContainer{
+        width: 800px;
+        padding: 1.5em 0;
+        margin: 40px auto auto auto;
+    }
+    
+    .roles{
+        font-size: 26px;
+    }
+
+    .infoContainer{
+        gap: 30px;
+        span{
+            font-size: 25px;
+        }
+    }
+    
+    .infoImg{
+        width: 30px;
+    }
+
+    .spellsContainer{
+        max-width: 800px;
+    }
+    
+    .spellImage{
+        width: 60px;
+    }
+    
+    .spellDescriptionTitle{
+        font-size: 22px;
+    }
+    
+    .skinCard{
+        width: 800px;
+        margin: 20px auto auto auto;
+    }
+    
+    .skinCardImage{
+        width: 800px;
+    }
+    
+    .skinCardTitle{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .mainImage{
+        width: 450px;
+    }
+
+    .championLoreContainer{
+        max-width: 700px;
+        font-size: 14px;
+    }
+
+    .rolesContainer{
+        width: 700px;
+        padding: 1em 0;
+        margin: 30px auto auto auto;
+    }
+    
+    .roles{
+        font-size: 22px;
+    }
+
+    .infoContainer{
+        gap: 25px;
+        span{
+            font-size: 20px;
+        }
+    }
+    
+    .infoImg{
+        width: 24px;
+    }
+
+    .spellsContainer{
+        max-width: 700px;
+    }
+    
+    .spellImage{
+        width: 40px;
+    }
+    
+    .spellDescriptionTitle{
+        font-size: 24px;
+    }
+    
+    .skinCard{
+        width: 700px;
+    }
+    
+    .skinCardImage{
+        width: 700px;
+    }
+    
+    .skinCardTitle{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header{
+        min-height: auto;
+    }
+    .mainImage{
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    .championLoreContainer{
+        max-width: 95%;
+        padding: 0 1em;
+    }
+
+    .rolesContainer{
+        width: 90%;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+    }
+    
+    .roles{
+        font-size: 22px;
+    }
+
+    .spellsContainer{
+        max-width: 90%;
+    }
+
+    .spellImagesAll{
+        justify-content: space-between;
+    }
+    
+    .spellImage{
+        width: 40px;
+    }
+    
+    .skinCard{
+        width: 90%;
+    }
+    
+    .skinCardImage{
+        width: 100%;
+    }
+    
+    .skinCardTitle{
+        font-size: 25px;
+    }
 }

@@ -12,7 +12,7 @@ export default function Home({ champion }) {
         <img className={styles.logo} src="/assets/logo.png" />
         <div className={styles.titles}>
           <h1 className={styles.title}>
-          "No dawn comes without darkness."
+          &quot;No dawn comes without darkness.&quot;
           </h1>
           <h2 className={styles.subtitle}>-Nasus</h2>
         </div>

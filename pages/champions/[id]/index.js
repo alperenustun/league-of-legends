@@ -33,7 +33,6 @@ export async function getStaticProps(context) {
 
 
 const Champion = ({ champion }) => {
-  console.log(champion);
 
   const [spellDescription, setSpellDescription] = useState({spellName: champion.passive.name, spellDescription: champion.passive.description, spellActive: 4})
   function handleSpellClick(spellIndex){
